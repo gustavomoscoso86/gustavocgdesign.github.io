@@ -299,9 +299,39 @@ body {
     cursor: pointer;
 }
 
+.album-title {
+    margin-bottom: 30px;
+}
+
 .gallery img:hover {
     transform: scale(1.05);
 }
+
+.foto-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.foto-descripcion {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.foto-container:hover .foto-descripcion {
+    opacity: 1;
+}
+
 
 /* Testimony */
 
@@ -707,41 +737,49 @@ color: #fff;
     }
 }
 
-.indice{
+html {
+  scroll-behavior: smooth;
+}
 
-   html {
-    scroll-behavior: smooth;
-  }
+.indice {
+  text-align: center;
+  padding: 40px 20px 20px;
+  background-color: #f0f0f0;
+}
 
-  .indice {
-    text-align: center;
-    padding: 40px 20px 20px;
-    background-color: #f0f0f0;
-  }
+.indice h1 {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+}
 
-  .indice h1 {
-    margin-bottom: 20px;
-    color: #333;
-  }
+.indice-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Botones más anchos */
+  gap: 20px;
+  max-width: 400px; /* Controla el ancho total del grupo */
+  margin: 0 auto;    /* Centra el grupo de botones */
+}
 
-  .indice-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
+.indice-buttons a {
+  display: block;
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  text-align: center;
+}
 
-  .indice-buttons a {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
+.indice-buttons a:hover {
+  background-color: #45a049;
+}
 
-  .indice-buttons a:hover {
-    background-color: #45a049;
-  }
+.indice-buttons a:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
 }
